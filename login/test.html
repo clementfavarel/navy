@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Login Test</title>
+    </head>
+    <body>
+        <script src="./login.js"></script>
+        <script src="../controleur.js"></script>
+
+        <div id="supportElement"></div>
+
+        <script>
+            const mockupController = new Controleur();
+            const supportElement = document.getElementById("supportElement");
+            const loginModule = new Login(
+                supportElement,
+                mockupController,
+                "login"
+            );
+
+            // Create a mock message with a false user
+            const mockMessage = {
+                vous_etes_connecte: {
+                    etat: false,
+                    pseudo: "John",
+                    id: "12345",
+                },
+            };
+
+            // Call the traitementMessage function with the mock message
+            loginModule.traitementMessage(mockMessage);
+        </script>
+    </body>
+</html>
